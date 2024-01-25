@@ -1,5 +1,6 @@
 package com.sparta.memo.entity;
 
+import com.sparta.memo.dto.MemoRequestDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,9 +22,8 @@ public class Memo {
     @Column
     private String contents;
 
-    public Memo(Long id, String title, String contents) {
-        this.id = id;
-        this.title = title;
-        this.contents = contents;
+    public Memo(MemoRequestDto memoRequestDto) {
+        this.title = memoRequestDto.getTitle();
+        this.contents = memoRequestDto.getContents();
     }
 }
