@@ -22,4 +22,9 @@ public class MemoController {
     public void saveMemos(@RequestBody MemoRequestDto memoRequestDto) {
         memoService.saveMemos(memoRequestDto);
     }
+
+    @PutMapping("/memos/{id}")
+    public void updateMemos(@PathVariable Long id, @RequestBody MemoRequestDto memoRequestDto) {
+        memoService.updateMemos(id, memoRequestDto);
+    }
 }
