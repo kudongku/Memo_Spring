@@ -34,6 +34,11 @@ public class MemoService {
         memo.update(memoRequestDto);
     }
 
+    public void deleteMemos(Long id) {
+        Memo memo = findById(id);
+        memoRepository.delete(memo);
+    }
+
     private Memo findById(Long id) {
         return memoRepository.findById(id).orElseThrow(
                 ()-> new IllegalArgumentException("그런 id의 memo는 없습니다.")

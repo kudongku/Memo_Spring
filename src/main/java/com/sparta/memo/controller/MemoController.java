@@ -27,4 +27,9 @@ public class MemoController {
     public void updateMemos(@PathVariable Long id, @RequestBody MemoRequestDto memoRequestDto) {
         memoService.updateMemos(id, memoRequestDto);
     }
+
+    @DeleteMapping("/memos/{id}")
+    public void deleteMemos(@PathVariable Long id) {
+        memoService.deleteMemos(id);
+    }
 }
